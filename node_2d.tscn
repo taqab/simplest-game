@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm3d6awh5letf"]
+
+[ext_resource type="Script" path="res://polygon_2d.gd" id="1_m8gdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrgnj"]
+size = Vector2(576, 648)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 576, 0, 576, 648, 0, 648)
+script = ExtResource("1_m8gdl")
+
+[node name="LeftTouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(288, 324)
+shape = SubResource("RectangleShape2D_yrgnj")
+action = "ui_left"
+
+[node name="RightTouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(864, 324)
+shape = SubResource("RectangleShape2D_yrgnj")
+action = "ui_right"
